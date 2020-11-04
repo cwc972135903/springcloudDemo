@@ -1,0 +1,18 @@
+eureka:
+  client:
+    # 此客户端是否应该从eureka server 获取eureka注册信息
+    # 服务端不需要获取
+    fetch-registry: false
+    # eureka client 信息是否被其他eureka client 发现它的信息
+    # 自己就是注册中心，不用注册自己
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka
+  instance:
+    # 实例名称 名字可以自己定
+    hostname: localhost
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 1000
+server:
+  port: 3000

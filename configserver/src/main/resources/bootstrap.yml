@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: config-single-server  # 应用名称
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/cwc972135903/cwc-cloud-config #配置文件所在仓库
+          username: cwc972135903 #github登录用户名
+          password: cwc20071212727 #github登录密码
+          default-label: main #配置文件分支--查看git上面的分支名称
+          search-paths: cwc-cloud-config  #配置文件所在根目录
+          basedir: G:/JavaProjectNew/cloudLocalConfig
+# 将当前配置中心服务注册到eurake，可以被其他服务发现
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:3000/eureka/
+  instance:
+    preferIpAddress: true

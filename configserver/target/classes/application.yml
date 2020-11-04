@@ -1,0 +1,10 @@
+server:
+  port: 3301
+spring:
+  profiles:
+    active: dev
+  rabbitmq:
+    host: paascloud-mq-rabbit
+    port: 5672
+    username: cwc
+    password: 123456

@@ -1,0 +1,17 @@
+server:
+  port: 3302
+# actuator 健康监控模块
+management:
+  endpoint:
+    shutdown:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+# 加这个的目的仅仅是为了防止配置中心服务没启动的时候，当前项目因为GitConfig里面在启动的时候会注入参数导致项目无法启动的问题
+data:
+  env: test-env
+  user:
+    username: test-u
+    password: test-p
